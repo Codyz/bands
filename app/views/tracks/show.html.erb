@@ -3,6 +3,7 @@
 <h2>Lyrics</h2>
 <%= @track.lyrics %>
 <br>
+<br>
 Album: <%= link_to @track.album.title, album_path(@track.album) %>
 <br>
 By: <%= link_to @track.band.name, band_path(@track.band) %>

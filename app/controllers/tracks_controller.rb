@@ -4,9 +4,8 @@ class TracksController < ApplicationController
   end
 
   def create
-    tune_id = Song.find_or_create_by_title( params[:song].downcase).id
     @track = Track.new(params[:track])
-    @track.song_id = tune_id
+
 
     if @track.save
       redirect_to track_url(@track)

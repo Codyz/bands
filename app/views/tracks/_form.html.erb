@@ -3,8 +3,7 @@
     <%= f.collection_select :album_id, Album.all, :id, :title %>
   </p>
   <p>
-    <%= f.label :song %>
-    <%= text_field_tag("song") %>
+    <%= f.collection_select :song_id, Song.all, :id, :title %>
   </p>
   <p>
     <%= f.label :track_num %>

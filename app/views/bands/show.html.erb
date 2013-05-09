@@ -2,7 +2,7 @@
 
 <h2>Albums</h2>
 <ul>
-  <% @band.albums.each do |album| %>
+  <% @band.albums.sort.each do |album| %>
     <li><%= link_to album.title, album_path(album) %></li>
   <% end %>
 </ul>

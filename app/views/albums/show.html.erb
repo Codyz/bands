@@ -2,7 +2,7 @@
 
 <h2>Tracks</h2>
 <ul>
-  <% @album.tracks.each do |track| %>
+  <% @album.tracks.sort_by {|t| t.track_num}.each do |track| %>
     <li><%= link_to track.song.title.capitalize, track_path(track) %></li>
   <% end %>
 </ul>

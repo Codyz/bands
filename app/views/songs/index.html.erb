@@ -1,0 +1,8 @@
+<h1>All Songs in Database</h1>
+
+<ul>
+  <% @songs.sort.each do |song| %>
+    <li><%= link_to song.title.capitalize, song_path(song) %></li>
+  <% end %>
+</ul>
+
