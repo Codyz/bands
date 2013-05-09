@@ -1,0 +1,24 @@
+<%= form_for(@artist) do |f| %>
+  <p>
+  <% Band.all.each do |band| %>
+    <label>
+
+        <input
+          type="checkbox"
+          name="artist[band_ids][]"
+          value="<%= band.id %>"
+          <%= "checked" if @artist.bands.include?(band) %>>
+
+        <%= band.name %>
+
+    </label>
+  <% end %>
+  <p>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+  <%= f.submit %>
+  </p>
+<% end %>
