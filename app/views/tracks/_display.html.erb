@@ -1,0 +1,8 @@
+<h1><%= @track.song.title.upcase %></h1>
+
+<h2>Lyrics</h2>
+<%= @track.song.lyrics %>
+<br>
+Album: <%= link_to @track.album.title, album_path(@track.album) %>
+<br>
+By: <%= link_to @track.band.name, band_path(@track.band) %>

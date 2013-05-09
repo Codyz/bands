@@ -1,0 +1,10 @@
+<h1><%= @band.name.capitalize %></h1>
+
+<h2>Albums</h2>
+<ul>
+  <% @band.albums.each do |album| %>
+    <li><%= link_to album.title, album_path(album) %></li>
+  <% end %>
+</ul>
+<br>
+<%= link_to "All Tracks", tracks_path(@band.tracks) %>

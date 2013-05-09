@@ -1,8 +1,14 @@
 <%= form_for(@album) do |f| %>
   <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </p>
+  <p>
+    <%= f.collection_select :band_id, Band.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.radio_button :live, 1%> <%= f.label :live, "Live", :value => 1%>
+    <%= f.radio_button :live, 0%> <%= f.label :live, "Studio", :value => 0%>
   <p>
     <%= f.submit %>
   </p>

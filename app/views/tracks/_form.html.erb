@@ -1,0 +1,24 @@
+<%= form_for(@track) do |f| %>
+  <p>
+    <%= f.collection_select :album_id, Album.all, :id, :title %>
+  </p>
+  <p>
+    <%= f.label :song %>
+    <%= text_field_tag("song") %>
+  </p>
+  <p>
+    <%= f.label :track_num %>
+    <%= f.text_field :track_num %>
+  </p>
+  <p>
+    <%= f.radio_button :bonus, 1%> <%= f.label :bonus, "Bonus", :value => 1%>
+    <%= f.radio_button :bonus, 0%> <%= f.label :bonus, "Regular", :value => 0%>
+  <p>
+  <p>
+    <%= f.label :lyrics %>
+    <%= text_area_tag("lyrics") %>
+  </p>
+  <p>
+  <%= f.submit %>
+  </p>
+<% end %>
