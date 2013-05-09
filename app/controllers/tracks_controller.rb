@@ -5,7 +5,6 @@ class TracksController < ApplicationController
 
   def create
     tune_id = Song.find_or_create_by_title( params[:song].downcase).id
-    Song.find(tune_id).lyrics = params[:lyrics]
     @track = Track.new(params[:track])
     @track.song_id = tune_id
 
